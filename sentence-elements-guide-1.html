@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentence Elements — Ecotourism in Central America</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest: #1b4332;
+  --leaf:   #40916c;
+  --lime:   #74c69d;
+  --mist:   #d8f3dc;
+  --sand:   #f8f4ec;
+  --bark:   #3d2b1f;
+  --gold:   #d4a84b;
+  --sky:    #48cae4;
+  --coral:  #e76f51;
+  --white:  #ffffff;
+  --shadow: rgba(27,67,50,0.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--sand);
+  color:var(--bark);
+  font-size:16px;
+  line-height:1.7;
+}
+
+/* ── HERO ── */
+.hero{
+  background:var(--forest);
+  color:var(--white);
+  padding:80px 40px 64px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2340916c' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity:0.6;
+}
+.hero-tag{
+  display:inline-block;
+  background:var(--leaf);
+  color:var(--white);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  padding:6px 18px;
+  border-radius:99px;
+  margin-bottom:24px;
+  position:relative;
+}
+.hero h1{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(32px,6vw,62px);
+  line-height:1.1;
+  margin-bottom:16px;
+  position:relative;
+}
+.hero h1 em{color:var(--lime);font-style:italic}
+.hero p{
+  font-size:18px;
+  color:rgba(255,255,255,0.75);
+  max-width:580px;
+  margin:0 auto 32px;
+  position:relative;
+}
+.leaf-deco{font-size:36px;letter-spacing:16px;position:relative;opacity:0.7}
+
+/* ── NAV ── */
+.toc-bar{
+  background:var(--forest);
+  position:sticky;top:0;z-index:100;
+  border-top:1px solid rgba(255,255,255,0.1);
+}
+.toc-inner{
+  max-width:1050px;margin:0 auto;
+  display:flex;flex-wrap:wrap;gap:0;
+  overflow-x:auto;
+}
+.toc-inner a{
+  color:rgba(255,255,255,0.7);
+  text-decoration:none;
+  font-size:12.5px;
+  font-weight:500;
+  letter-spacing:0.05em;
+  padding:13px 18px;
+  white-space:nowrap;
+  border-right:1px solid rgba(255,255,255,0.08);
+  transition:all 0.2s;
+}
+.toc-inner a:hover{color:var(--lime);background:rgba(255,255,255,0.05)}
+
+/* ── WRAPPER ── */
+.wrap{max-width:900px;margin:0 auto;padding:0 28px}
+
+/* ── SECTIONS ── */
+section{padding:64px 0 48px;border-top:1px solid rgba(64,145,108,0.2)}
+section:first-of-type{border-top:none}
+
+.sec-tag{
+  display:inline-block;
+  background:var(--mist);
+  color:var(--leaf);
+  font-size:10.5px;
+  font-weight:600;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  padding:4px 14px;
+  border-radius:4px;
+  margin-bottom:12px;
+}
+h2{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(26px,4vw,38px);
+  color:var(--forest);
+  margin-bottom:20px;
+  line-height:1.2;
+}
+h2 em{font-style:italic;color:var(--leaf)}
+h3{
+  font-family:'DM Serif Display',serif;
+  font-size:21px;
+  color:var(--forest);
+  margin:36px 0 10px;
+  padding-left:14px;
+  border-left:3px solid var(--lime);
+}
+p{margin-bottom:16px}
+
+/* ── ELEMENT CARDS ── */
+.elem-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:16px;
+  margin:28px 0;
+}
+.elem-card{
+  background:var(--white);
+  border:1px solid rgba(64,145,108,0.2);
+  border-top:3px solid var(--leaf);
+  padding:20px 22px;
+  border-radius:4px;
+  box-shadow:0 2px 8px var(--shadow);
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.elem-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px var(--shadow)}
+.elem-name{
+  font-family:'DM Serif Display',serif;
+  font-size:17px;
+  color:var(--forest);
+  margin-bottom:6px;
+}
+.elem-abbr{
+  display:inline-block;
+  background:var(--mist);
+  color:var(--leaf);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  padding:2px 8px;
+  border-radius:3px;
+  margin-bottom:8px;
+}
+.elem-def{font-size:14px;color:#4a5568;line-height:1.55;margin-bottom:10px}
+.elem-ex{
+  font-size:13.5px;
+  background:var(--mist);
+  padding:8px 12px;
+  border-radius:3px;
+  font-style:italic;
+  color:var(--bark);
+}
+.elem-ex mark{
+  background:rgba(212,168,75,0.25);
+  color:var(--bark);
+  padding:0 2px;
+  border-radius:2px;
+}
+
+/* ── SENTENCE DIAGRAM BOX ── */
+.diagram-box{
+  background:var(--white);
+  border:1px solid rgba(64,145,108,0.25);
+  border-radius:6px;
+  padding:28px 32px;
+  margin:24px 0;
+  overflow-x:auto;
+}
+.diagram-box .sentence{
+  font-size:17px;
+  line-height:2.8;
+  text-align:center;
+  font-weight:500;
+}
+.diagram-box .sentence span{
+  display:inline-block;
+  padding:2px 8px;
+  border-radius:4px;
+  margin:0 2px;
+  font-size:15px;
+  font-weight:600;
+  position:relative;
+}
+.lbl{
+  display:block;
+  font-size:9.5px;
+  font-weight:700;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  text-align:center;
+  margin-top:2px;
+}
+.tag-cs{background:#dbeafe;color:#1e40af}.tag-cs .lbl{color:#1e40af}
+.tag-ss{background:#ede9fe;color:#5b21b6}.tag-ss .lbl{color:#5b21b6}
+.tag-cop{background:#fef3c7;color:#92400e}.tag-cop .lbl{color:#92400e}
+.tag-sp{background:#fce7f3;color:#9d174d}.tag-sp .lbl{color:#9d174d}
+.tag-cp{background:#fff7ed;color:#9a3412}.tag-cp .lbl{color:#9a3412}
+.tag-do{background:#dcfce7;color:#166534}.tag-do .lbl{color:#166534}
+.tag-io{background:#f0fdf4;color:#15803d;border:1px dashed #86efac}.tag-io .lbl{color:#15803d}
+.tag-oc{background:#fdf4ff;color:#7e22ce}.tag-oc .lbl{color:#7e22ce}
+.tag-pn{background:#ecfeff;color:#0e7490}.tag-pn .lbl{color:#0e7490}
+.tag-pa{background:#fff1f2;color:#9f1239}.tag-pa .lbl{color:#9f1239}
+
+/* ── VERB TYPE CARDS ── */
+.verb-compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+.verb-card{
+  border-radius:6px;
+  padding:24px;
+  border:1px solid transparent;
+}
+.verb-card.trans{background:#f0fdf4;border-color:#86efac}
+.verb-card.intrans{background:#fff7ed;border-color:#fed7aa}
+.verb-card h4{
+  font-family:'DM Serif Display',serif;
+  font-size:19px;
+  margin-bottom:8px;
+}
+.verb-card.trans h4{color:#166534}
+.verb-card.intrans h4{color:#9a3412}
+.verb-card p{font-size:14px;margin-bottom:12px}
+.verb-card ul{list-style:none;padding:0}
+.verb-card ul li{
+  font-size:13.5px;
+  padding:5px 0;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  font-style:italic;
+}
+.verb-card ul li:last-child{border:none}
+
+/* ── EXERCISE SECTIONS ── */
+.exercise-block{
+  background:var(--white);
+  border:1px solid rgba(64,145,108,0.2);
+  border-radius:8px;
+  padding:32px;
+  margin:28px 0;
+  box-shadow:0 2px 12px var(--shadow);
+}
+.exercise-block h4{
+  font-family:'DM Serif Display',serif;
+  font-size:20px;
+  color:var(--forest);
+  margin-bottom:6px;
+}
+.ex-instructions{
+  font-size:14px;
+  color:#6b7280;
+  margin-bottom:24px;
+  padding-bottom:16px;
+  border-bottom:1px solid rgba(64,145,108,0.15);
+  font-style:italic;
+}
+.ex-item{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  margin-bottom:20px;
+  padding-bottom:20px;
+  border-bottom:1px dashed rgba(64,145,108,0.15);
+}
+.ex-item:last-child{border:none;margin-bottom:0;padding-bottom:0}
+.ex-num{
+  background:var(--forest);
+  color:var(--white);
+  font-size:12px;
+  font-weight:700;
+  width:26px;height:26px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:3px;
+}
+.ex-sentence{font-size:15.5px;font-weight:500;margin-bottom:8px}
+.ex-sentence em{color:var(--leaf);font-style:italic}
+.ex-question{font-size:14px;color:#4b5563;margin-bottom:8px}
+
+/* Input fields */
+.ex-input{
+  width:100%;
+  border:1.5px solid rgba(64,145,108,0.3);
+  border-radius:4px;
+  padding:8px 12px;
+  font-family:'DM Sans',sans-serif;
+  font-size:14px;
+  color:var(--bark);
+  background:var(--sand);
+  transition:border-color 0.2s;
+  outline:none;
+}
+.ex-input:focus{border-color:var(--leaf)}
+.ex-input.correct{border-color:#16a34a;background:#f0fdf4}
+.ex-input.wrong{border-color:#dc2626;background:#fef2f2}
+
+/* Radio / TF */
+.tf-options{display:flex;gap:12px;margin-top:8px}
+.tf-btn{
+  flex:1;
+  padding:10px;
+  border:2px solid rgba(64,145,108,0.25);
+  border-radius:6px;
+  background:var(--sand);
+  font-family:'DM Sans',sans-serif;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  transition:all 0.2s;
+  color:var(--bark);
+}
+.tf-btn:hover{border-color:var(--leaf);background:var(--mist)}
+.tf-btn.selected-t{border-color:#16a34a;background:#dcfce7;color:#166534}
+.tf-btn.selected-f{border-color:#dc2626;background:#fee2e2;color:#991b1b}
+.tf-btn.correct-ans{border-color:#16a34a;background:#dcfce7;color:#166534}
+.tf-btn.wrong-ans{border-color:#dc2626;background:#fee2e2;color:#991b1b}
+
+/* Check button */
+.check-btn{
+  background:var(--forest);
+  color:var(--white);
+  border:none;
+  padding:12px 28px;
+  border-radius:6px;
+  font-family:'DM Sans',sans-serif;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  margin-top:20px;
+  transition:background 0.2s,transform 0.1s;
+  letter-spacing:0.04em;
+}
+.check-btn:hover{background:var(--leaf)}
+.check-btn:active{transform:scale(0.97)}
+
+/* Answer key */
+.answer-key{
+  background:var(--forest);
+  color:var(--white);
+  border-radius:8px;
+  padding:32px;
+  margin:28px 0;
+}
+.answer-key h4{
+  font-family:'DM Serif Display',serif;
+  font-size:22px;
+  margin-bottom:20px;
+  color:var(--lime);
+}
+.answer-key .ak-item{
+  display:flex;gap:14px;
+  padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  font-size:14.5px;
+}
+.answer-key .ak-item:last-child{border:none}
+.ak-num{
+  background:var(--leaf);
+  color:var(--white);
+  width:24px;height:24px;min-width:24px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;margin-top:2px;
+}
+.ak-text{line-height:1.55}
+.ak-text strong{color:var(--lime)}
+.ak-text em{color:rgba(255,255,255,0.7);font-style:italic}
+
+/* Feedback popup */
+.feedback{
+  margin-top:16px;
+  padding:12px 16px;
+  border-radius:6px;
+  font-size:14px;
+  font-weight:500;
+  display:none;
+}
+.feedback.show{display:block}
+.feedback.good{background:#dcfce7;color:#166534;border:1px solid #86efac}
+.feedback.bad{background:#fee2e2;color:#991b1b;border:1px solid #fca5a5}
+
+/* Sources */
+.sources{
+  background:var(--mist);
+  border-left:4px solid var(--leaf);
+  padding:24px 28px;
+  border-radius:0 6px 6px 0;
+  margin:32px 0;
+}
+.sources h4{
+  font-family:'DM Serif Display',serif;
+  font-size:18px;
+  color:var(--forest);
+  margin-bottom:14px;
+}
+.sources ol{padding-left:18px}
+.sources li{font-size:13.5px;margin-bottom:10px;line-height:1.5;color:#374151}
+.sources li a{color:var(--leaf);text-decoration:none;word-break:break-all}
+.sources li a:hover{text-decoration:underline}
+.sources .s-note{font-size:12px;color:#6b7280;font-style:italic}
+
+/* Score display */
+.score-bar{
+  background:var(--mist);
+  border:1px solid rgba(64,145,108,0.3);
+  border-radius:6px;
+  padding:16px 20px;
+  margin-top:16px;
+  display:none;
+  align-items:center;
+  gap:14px;
+}
+.score-bar.show{display:flex}
+.score-circle{
+  width:56px;height:56px;
+  border-radius:50%;
+  background:var(--forest);
+  color:var(--white);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.score-circle .sc-num{font-size:20px;font-weight:700;line-height:1}
+.score-circle .sc-den{font-size:10px;opacity:0.7}
+.score-msg{font-size:14px;color:var(--forest);font-weight:500}
+
+footer{
+  background:var(--forest);
+  color:rgba(255,255,255,0.6);
+  text-align:center;
+  padding:40px;
+  font-size:13px;
+  margin-top:80px;
+}
+footer strong{color:var(--lime)}
+
+@media(max-width:640px){
+  .verb-compare{grid-template-columns:1fr}
+  .elem-grid{grid-template-columns:1fr}
+  .toc-inner a{font-size:11px;padding:11px 12px}
+  .wrap{padding:0 16px}
+  .exercise-block{padding:20px}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-tag">🌿 Grammar Guide · Ecotourism Edition</div>
+  <h1>Sentence <em>Elements</em><br>& Types of Verbs</h1>
+  <p>Learn grammar through the lens of ecotourism in Central America — with exercises, true/false, and answer keys.</p>
+  <div class="leaf-deco">🌱 🦜 🌿</div>
+</header>
+
+<!-- STICKY NAV -->
+<nav class="toc-bar">
+  <div class="toc-inner">
+    <a href="#elements">Sentence Elements</a>
+    <a href="#verbs">Types of Verbs</a>
+    <a href="#exercise1">Exercise A</a>
+    <a href="#exercise2">Exercise B</a>
+    <a href="#trueFalse">True or False</a>
+    <a href="#answers">Answer Key</a>
+    <a href="#sources">Sources</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ══════════════════════════════════════
+     SECTION 1 — SENTENCE ELEMENTS
+══════════════════════════════════════ -->
+<section id="elements">
+  <span class="sec-tag">Chapter 1</span>
+  <h2>Sentence <em>Elements</em></h2>
+  <p>Every sentence is built from specific functional parts. Identifying these elements allows you to analyse any sentence — from the simplest to the most complex — with precision.</p>
+
+  <div class="elem-grid">
+
+    <div class="elem-card">
+      <div class="elem-name">Complete Subject</div>
+      <div class="elem-abbr">CS</div>
+      <div class="elem-def">The <em>entire</em> subject of the sentence — the main noun plus all its modifiers.</div>
+      <div class="elem-ex"><mark>The dense rainforests of Costa Rica</mark> attract millions of visitors.</div>
+    </div>
+
+    <div class="elem-card">
+      <div class="elem-name">Simple Subject</div>
+      <div class="elem-abbr">SS</div>
+      <div class="elem-def">The key noun or pronoun in the complete subject — stripped of all modifiers.</div>
+      <div class="elem-ex">The dense rainforests of Costa Rica attract millions of visitors.<br>SS → <mark>rainforests</mark></div>
+    </div>
+
+    <div class="elem-card">
+      <div class="elem-name">Compound Subject</div>
+      <div class="elem-abbr">CpS</div>
+      <div class="elem-def">Two or more subjects sharing the same verb, joined by a conjunction.</div>
+      <div class="elem-ex"><mark>Belize and Guatemala</mark> both offer exceptional wildlife tours.</div>
+    </div>
+
+    <div class="elem-card">
+      <div class="elem-name">Complete Predicate</div>
+      <div class="elem-abbr">CP</div>
+      <div class="elem-def">Everything in the sentence that says something about the subject — verb plus all complements and modifiers.</div>
+      <div class="elem-ex">The guide <mark>led the tourists through the Monteverde Cloud Forest Reserve.</mark></div>
+    </div>
+
+    <div class="elem-card">
+      <div class="elem-name">Simple Predicate</div>
+      <div class="elem-abbr">SP</div>
+      <div class="elem-def">The main verb (or verb phrase) of the sentence only.</div>
+      <div class="elem-ex">The guide led the tourists through the forest.<br>SP → <mark>led</mark></div>
+    </div>
+
+    <div class="elem-card">
+      <div class="elem-name">Compound Predicate</div>
+      <div class="elem-abbr">CpP</div>
+      <div class="elem-def">Two or more verbs sharing the same subject, joined by a conjunction.</div>
+      <div class="elem-ex">Visitors <mark>hike the trails and photograph the wildlife</mark> every morning.</div>
+    </div>
+
+    <div class="elem-card">
+      <div class="elem-name">Direct Object</div>
+      <div class="elem-abbr">DO</div>
+      <div class="elem-def">The noun that directly receives the action of a transitive verb. Answers <em>whom?</em> or <em>what?</em></div>
+      <div class="elem-ex">The park ranger showed <mark>the monkeys</mark> to the visitors.</div>
+    </div>
+
+    <div class="elem-card">
+      <div class="elem-name">Indirect Object</div>
+      <div class="elem-abbr">IO</div>
+      <div class="elem-def">The noun that tells <em>to whom / for whom</em> the action is done. Appears between verb and direct object.</div>
+      <div class="elem-ex">The agency gave <mark>the tourists</mark> a detailed map of the reserve.</div>
+    </div>
+
+    <div class="elem-card">
+      <div class="elem-name">Object Complement</div>
+      <div class="elem-abbr">OC</div>
+      <div class="elem-def">A noun or adjective that follows the direct object and renames or describes it.</div>
+      <div class="elem-ex">Locals consider the quetzal <mark>the symbol of freedom.</mark></div>
+    </div>
+
+    <div class="elem-card">
+      <div class="elem-name">Subject Complement / Predicate Nominative</div>
+      <div class="elem-abbr">SC/PN</div>
+      <div class="elem-def">A noun that follows a linking verb and renames the subject.</div>
+      <div class="elem-ex">Costa Rica is <mark>a leader in sustainable tourism.</mark></div>
+    </div>
+
+    <div class="elem-card">
+      <div class="elem-name">Subject Complement / Predicate Adjective</div>
+      <div class="elem-abbr">SC/PA</div>
+      <div class="elem-def">An adjective that follows a linking verb and describes the subject.</div>
+      <div class="elem-ex">The cloud forest is <mark>breathtaking</mark> at sunrise.</div>
+    </div>
+
+  </div>
+
+  <!-- LABELLED DIAGRAM -->
+  <h3>Sentence Diagram — All Elements Labelled</h3>
+  <div class="diagram-box">
+    <div class="sentence">
+      <span class="tag-cs">The experienced guide<span class="lbl">CS</span></span>
+      <span style="font-size:20px;font-weight:300;padding:0 4px">·</span>
+      <span class="tag-ss">guide<span class="lbl">SS</span></span>
+      &nbsp;&nbsp;
+      <span class="tag-sp">gave<span class="lbl">SP</span></span>
+      &nbsp;&nbsp;
+      <span class="tag-io">the tourists<span class="lbl">IO</span></span>
+      &nbsp;&nbsp;
+      <span class="tag-do">a detailed map<span class="lbl">DO</span></span>
+      &nbsp;&nbsp;
+      <span class="tag-cp">gave the tourists a detailed map<span class="lbl">CP</span></span>
+    </div>
+  </div>
+  <div class="diagram-box">
+    <div class="sentence">
+      <span class="tag-cs">Ecotourism in Panama<span class="lbl">CS</span></span>
+      &nbsp;&nbsp;
+      <span class="tag-sp">is<span class="lbl">SP — linking</span></span>
+      &nbsp;&nbsp;
+      <span class="tag-pn">a growing industry<span class="lbl">SC/PN</span></span>
+    </div>
+  </div>
+  <div class="diagram-box">
+    <div class="sentence">
+      <span class="tag-cs">The resplendent quetzal<span class="lbl">CS</span></span>
+      &nbsp;&nbsp;
+      <span class="tag-sp">appears<span class="lbl">SP — linking</span></span>
+      &nbsp;&nbsp;
+      <span class="tag-pa">rare<span class="lbl">SC/PA</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION 2 — TYPES OF VERBS
+══════════════════════════════════════ -->
+<section id="verbs">
+  <span class="sec-tag">Chapter 2</span>
+  <h2>Types of <em>Verbs</em></h2>
+  <p>Verbs are the engine of every sentence. The most important distinction for sentence analysis is whether a verb is <strong>transitive</strong> or <strong>intransitive</strong>.</p>
+
+  <div class="verb-compare">
+    <div class="verb-card trans">
+      <h4>Transitive Verb</h4>
+      <p>Requires a <strong>direct object</strong> to complete its meaning. The action passes from the subject <em>to</em> something or someone.</p>
+      <p><strong>Formula:</strong> Subject + Transitive Verb + <u>Direct Object</u></p>
+      <ul>
+        <li>Tourists <u>photograph</u> the spider monkeys. ✔</li>
+        <li>Belize <u>protects</u> its barrier reef. ✔</li>
+        <li>The guide <u>showed</u> the group the nesting turtles. ✔</li>
+        <li>Panama <u>attracts</u> birdwatchers from around the world. ✔</li>
+      </ul>
+    </div>
+    <div class="verb-card intrans">
+      <h4>Intransitive Verb</h4>
+      <p>Does <strong>not</strong> take a direct object. The action is complete within the subject — or may be followed only by adverbs/prepositional phrases.</p>
+      <p><strong>Formula:</strong> Subject + Intransitive Verb (+ modifiers)</p>
+      <ul>
+        <li>The quetzal <u>disappeared</u> into the canopy. ✔</li>
+        <li>Tourists <u>arrived</u> at the Osa Peninsula. ✔</li>
+        <li>The waterfall <u>flows</u> year-round. ✔</li>
+        <li>Many species <u>thrive</u> in protected reserves. ✔</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Linking Verbs (Special Category)</h3>
+  <p>Linking verbs connect the subject to a <strong>subject complement</strong> — either a predicate nominative (noun) or predicate adjective. Common linking verbs: <em>be, seem, appear, become, feel, look, remain, smell, sound, taste.</em></p>
+  <div class="diagram-box">
+    <div class="sentence" style="font-size:15px;line-height:2.4">
+      <span class="tag-cs">The Monteverde Reserve<span class="lbl">Subject</span></span>
+      &nbsp;
+      <span class="tag-sp">remains<span class="lbl">Linking Verb</span></span>
+      &nbsp;
+      <span class="tag-pa">one of the most biodiverse on Earth<span class="lbl">SC/PN</span></span>
+    </div>
+  </div>
+
+  <h3>Same Verb — Two Roles</h3>
+  <p>Many verbs can be <em>either</em> transitive or intransitive depending on context:</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0">
+    <div style="background:#f0fdf4;padding:16px;border-radius:6px;font-size:14px;border:1px solid #bbf7d0">
+      <strong>Transitive:</strong><br>
+      <em>She <u>runs</u> an ecotourism programme in Nicaragua.</em><br>
+      <span style="color:#6b7280;font-size:12px">(runs → what? → programme ✔)</span>
+    </div>
+    <div style="background:#fff7ed;padding:16px;border-radius:6px;font-size:14px;border:1px solid #fed7aa">
+      <strong>Intransitive:</strong><br>
+      <em>She <u>runs</u> through the rainforest each morning.</em><br>
+      <span style="color:#6b7280;font-size:12px">(runs → no object ✔)</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     EXERCISE A — IDENTIFY ELEMENTS
+══════════════════════════════════════ -->
+<section id="exercise1">
+  <span class="sec-tag">Practice · Exercise A</span>
+  <h2>Identify the <em>Sentence Element</em></h2>
+
+  <div class="exercise-block">
+    <h4>🌿 Exercise A — Label the Underlined Part</h4>
+    <p class="ex-instructions">Each sentence is about ecotourism in Central America. The underlined word or phrase is highlighted. Type the correct label from the box: <strong>SS · CS · CpS · SP · CP · CpP · DO · IO · OC · SC/PN · SC/PA</strong></p>
+
+    <div class="ex-item">
+      <div class="ex-num">1</div>
+      <div style="flex:1">
+        <div class="ex-sentence">Costa Rica <em>[has established]</em> more than 30 national parks and protected areas.</div>
+        <div class="ex-question">What sentence element is the bracketed part?</div>
+        <input class="ex-input" id="a1" placeholder="Type your answer…" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="ex-item">
+      <div class="ex-num">2</div>
+      <div style="flex:1">
+        <div class="ex-sentence"><em>[Belize and Honduras]</em> attract divers and snorkellers to their coral reefs.</div>
+        <div class="ex-question">What sentence element is the bracketed part?</div>
+        <input class="ex-input" id="a2" placeholder="Type your answer…" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="ex-item">
+      <div class="ex-num">3</div>
+      <div style="flex:1">
+        <div class="ex-sentence">The government gave <em>[local communities]</em> economic incentives to preserve their forests.</div>
+        <div class="ex-question">What sentence element is the bracketed part?</div>
+        <input class="ex-input" id="a3" placeholder="Type your answer…" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="ex-item">
+      <div class="ex-num">4</div>
+      <div style="flex:1">
+        <div class="ex-sentence">Guatemala's ecotourism sector is <em>[a vital source of national income]</em>.</div>
+        <div class="ex-question">What sentence element is the bracketed part?</div>
+        <input class="ex-input" id="a4" placeholder="Type your answer…" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="ex-item">
+      <div class="ex-num">5</div>
+      <div style="flex:1">
+        <div class="ex-sentence">The cloud forest smells <em>[fresh]</em> after the tropical rains.</div>
+        <div class="ex-question">What sentence element is the bracketed part?</div>
+        <input class="ex-input" id="a5" placeholder="Type your answer…" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="ex-item">
+      <div class="ex-num">6</div>
+      <div style="flex:1">
+        <div class="ex-sentence">Visitors <em>[hike the trails and photograph the wildlife]</em> throughout the dry season.</div>
+        <div class="ex-question">What sentence element is the bracketed part?</div>
+        <input class="ex-input" id="a6" placeholder="Type your answer…" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="ex-item">
+      <div class="ex-num">7</div>
+      <div style="flex:1">
+        <div class="ex-sentence">The Osa Peninsula is considered <em>[one of the most biodiverse places on Earth]</em>.</div>
+        <div class="ex-question">What sentence element is the bracketed part?</div>
+        <input class="ex-input" id="a7" placeholder="Type your answer…" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="ex-item">
+      <div class="ex-num">8</div>
+      <div style="flex:1">
+        <div class="ex-sentence"><em>[The experienced wildlife photographer]</em> captured rare images of the harpy eagle.</div>
+        <div class="ex-question">What sentence element is the bracketed part?</div>
+        <input class="ex-input" id="a8" placeholder="Type your answer…" autocomplete="off">
+      </div>
+    </div>
+
+    <button class="check-btn" onclick="checkA()">Check Answers</button>
+    <div class="feedback" id="feedbackA"></div>
+    <div class="score-bar" id="scoreA">
+      <div class="score-circle"><span class="sc-num" id="scoreAnum">0</span><span class="sc-den">/8</span></div>
+      <div class="score-msg" id="scoreAmsg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     EXERCISE B — TRANSITIVE / INTRANSITIVE
+══════════════════════════════════════ -->
+<section id="exercise2">
+  <span class="sec-tag">Practice · Exercise B</span>
+  <h2>Transitive or <em>Intransitive?</em></h2>
+
+  <div class="exercise-block">
+    <h4>🦜 Exercise B — Classify the Verb</h4>
+    <p class="ex-instructions">Read each sentence. Identify the verb in parentheses and write <strong>T</strong> (transitive) or <strong>I</strong> (intransitive). If transitive, also write the direct object.</p>
+
+    <div class="ex-item">
+      <div class="ex-num">1</div>
+      <div style="flex:1">
+        <div class="ex-sentence">Thousands of leatherback turtles (nest) on the Caribbean coast of Costa Rica each year.</div>
+        <div class="ex-question">T or I? (If T, what is the direct object?)</div>
+        <input class="ex-input" id="b1" placeholder="T or I — and direct object if T…" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="ex-item">
+      <div class="ex-num">2</div>
+      <div style="flex:1">
+        <div class="ex-sentence">The Tortuguero National Park (protects) nesting sea turtles along 35 km of coastline.</div>
+        <div class="ex-question">T or I? (If T, what is the direct object?)</div>
+        <input class="ex-input" id="b2" placeholder="T or I — and direct object if T…" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="ex-item">
+      <div class="ex-num">3</div>
+      <div style="flex:1">
+        <div class="ex-sentence">Scarlet macaws (fly) over the Carara National Park in large, noisy flocks.</div>
+        <div class="ex-question">T or I? (If T, what is the direct object?)</div>
+        <input class="ex-input" id="b3" placeholder="T or I — and direct object if T…" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="ex-item">
+      <div class="ex-num">4</div>
+      <div style="flex:1">
+        <div class="ex-sentence">Nicaragua (offers) travellers pristine lakes, volcanoes, and cloud forests.</div>
+        <div class="ex-question">T or I? (If T, what is the direct object?)</div>
+        <input class="ex-input" id="b4" placeholder="T or I — and direct object if T…" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="ex-item">
+      <div class="ex-num">5</div>
+      <div style="flex:1">
+        <div class="ex-sentence">Whale sharks (migrate) through the waters of the Gulf of Honduras seasonally.</div>
+        <div class="ex-question">T or I? (If T, what is the direct object?)</div>
+        <input class="ex-input" id="b5" placeholder="T or I — and direct object if T…" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="ex-item">
+      <div class="ex-num">6</div>
+      <div style="flex:1">
+        <div class="ex-sentence">Panama (declared) the Darién Gap a UNESCO World Heritage Site.</div>
+        <div class="ex-question">T or I? (If T, what is the direct object?)</div>
+        <input class="ex-input" id="b6" placeholder="T or I — and direct object if T…" autocomplete="off">
+      </div>
+    </div>
+
+    <button class="check-btn" onclick="checkB()">Check Answers</button>
+    <div class="feedback" id="feedbackB"></div>
+    <div class="score-bar" id="scoreB">
+      <div class="score-circle"><span class="sc-num" id="scoreBnum">0</span><span class="sc-den">/6</span></div>
+      <div class="score-msg" id="scoreBmsg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TRUE OR FALSE
+══════════════════════════════════════ -->
+<section id="trueFalse">
+  <span class="sec-tag">Practice · True or False</span>
+  <h2>True or <em>False?</em></h2>
+  <p>Read each statement carefully. Click <strong>True</strong> or <strong>False</strong>, then check your score.</p>
+
+  <div class="exercise-block">
+    <h4>🌎 Grammar & Ecotourism — True or False</h4>
+    <p class="ex-instructions">Ten statements combining grammar concepts and ecotourism facts from Central America. Select your answer and submit.</p>
+
+    <div id="tf-container"></div>
+
+    <button class="check-btn" onclick="checkTF()">Check All Answers</button>
+    <div class="feedback" id="feedbackTF"></div>
+    <div class="score-bar" id="scoreTF">
+      <div class="score-circle"><span class="sc-num" id="scoreTFnum">0</span><span class="sc-den">/10</span></div>
+      <div class="score-msg" id="scoreTFmsg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     ANSWER KEY
+══════════════════════════════════════ -->
+<section id="answers">
+  <span class="sec-tag">Answer Key</span>
+  <h2>Complete <em>Answers</em></h2>
+
+  <div class="answer-key">
+    <h4>📋 Exercise A — Sentence Elements</h4>
+    <div class="ak-item"><div class="ak-num">1</div><div class="ak-text"><strong>SP (Simple Predicate)</strong> — "has established" is the main verb phrase. <em>Costa Rica = SS / CS. "more than 30 national parks and protected areas" = DO.</em></div></div>
+    <div class="ak-item"><div class="ak-num">2</div><div class="ak-text"><strong>CpS (Compound Subject)</strong> — "Belize and Honduras" are two subjects sharing the verb "attract." <em>"coral reefs" = DO.</em></div></div>
+    <div class="ak-item"><div class="ak-num">3</div><div class="ak-text"><strong>IO (Indirect Object)</strong> — "local communities" answers <em>to whom</em> the government gave the incentives. <em>DO = "economic incentives."</em></div></div>
+    <div class="ak-item"><div class="ak-num">4</div><div class="ak-text"><strong>SC/PN (Subject Complement / Predicate Nominative)</strong> — "a vital source of national income" follows the linking verb "is" and renames the subject.</div></div>
+    <div class="ak-item"><div class="ak-num">5</div><div class="ak-text"><strong>SC/PA (Subject Complement / Predicate Adjective)</strong> — "fresh" follows the linking verb "smells" and describes the subject "cloud forest."</div></div>
+    <div class="ak-item"><div class="ak-num">6</div><div class="ak-text"><strong>CpP (Compound Predicate)</strong> — "hike the trails and photograph the wildlife" are two verbs (+ objects) sharing the subject "Visitors."</div></div>
+    <div class="ak-item"><div class="ak-num">7</div><div class="ak-text"><strong>OC (Object Complement)</strong> — "one of the most biodiverse places on Earth" follows the direct object (implied: "Osa Peninsula") and renames it after the verb "considered."</div></div>
+    <div class="ak-item"><div class="ak-num">8</div><div class="ak-text"><strong>CS (Complete Subject)</strong> — "The experienced wildlife photographer" is the full subject. SS = "photographer."</div></div>
+  </div>
+
+  <div class="answer-key" style="margin-top:20px">
+    <h4>📋 Exercise B — Transitive / Intransitive</h4>
+    <div class="ak-item"><div class="ak-num">1</div><div class="ak-text"><strong>I (Intransitive)</strong> — "nest" has no direct object; turtles simply perform the action. <em>"on the Caribbean coast" is a prepositional phrase, not a DO.</em></div></div>
+    <div class="ak-item"><div class="ak-num">2</div><div class="ak-text"><strong>T (Transitive)</strong> — DO = <em>"nesting sea turtles."</em> The park protects <em>what?</em> → turtles.</div></div>
+    <div class="ak-item"><div class="ak-num">3</div><div class="ak-text"><strong>I (Intransitive)</strong> — "fly" has no direct object. "over the Carara National Park" is a prepositional phrase of place.</div></div>
+    <div class="ak-item"><div class="ak-num">4</div><div class="ak-text"><strong>T (Transitive)</strong> — DO = <em>"pristine lakes, volcanoes, and cloud forests."</em> Nicaragua offers <em>what?</em> → those things. <em>(Note: "travellers" = IO.)</em></div></div>
+    <div class="ak-item"><div class="ak-num">5</div><div class="ak-text"><strong>I (Intransitive)</strong> — "migrate" has no direct object. "through the waters…" is a prepositional phrase of path.</div></div>
+    <div class="ak-item"><div class="ak-num">6</div><div class="ak-text"><strong>T (Transitive)</strong> — DO = <em>"the Darién Gap."</em> Panama declared <em>what?</em> → the Darién Gap. <em>"a UNESCO World Heritage Site" = OC (object complement).</em></div></div>
+  </div>
+
+  <div class="answer-key" style="margin-top:20px">
+    <h4>📋 True or False — Answers</h4>
+    <div class="ak-item"><div class="ak-num">1</div><div class="ak-text"><strong>TRUE</strong> — In the sentence "Costa Rica protects its forests," "protects" is a transitive verb with DO "forests."</div></div>
+    <div class="ak-item"><div class="ak-num">2</div><div class="ak-text"><strong>FALSE</strong> — A compound subject uses two or more subjects, not two verbs. Two verbs = compound predicate.</div></div>
+    <div class="ak-item"><div class="ak-num">3</div><div class="ak-text"><strong>TRUE</strong> — "is" is a linking verb; "a UNESCO Biosphere Reserve" follows it and renames the subject, making it a SC/PN.</div></div>
+    <div class="ak-item"><div class="ak-num">4</div><div class="ak-text"><strong>FALSE</strong> — "Arrived" is intransitive. You cannot arrive something; the verb needs no direct object.</div></div>
+    <div class="ak-item"><div class="ak-num">5</div><div class="ak-text"><strong>TRUE</strong> — "tourists" answers <em>to whom</em> the guide sent the information → it is the indirect object.</div></div>
+    <div class="ak-item"><div class="ak-num">6</div><div class="ak-text"><strong>FALSE</strong> — The simple subject is only the key noun: <em>quetzal</em>. The complete subject is "The resplendent quetzal."</div></div>
+    <div class="ak-item"><div class="ak-num">7</div><div class="ak-text"><strong>TRUE</strong> — "disappeared" is intransitive: the quetzal disappeared <em>into the canopy</em> (prepositional phrase, not DO).</div></div>
+    <div class="ak-item"><div class="ak-num">8</div><div class="ak-text"><strong>FALSE</strong> — Predicate adjectives describe the subject (e.g., "The reef looks fragile"). Predicate nominatives rename it (e.g., "The reef is a treasure").</div></div>
+    <div class="ak-item"><div class="ak-num">9</div><div class="ak-text"><strong>TRUE</strong> — "named" is transitive (DO = "the reserve") and "symbol of biodiversity" completes the meaning of the DO → OC.</div></div>
+    <div class="ak-item"><div class="ak-num">10</div><div class="ak-text"><strong>TRUE</strong> — Panama and Belize are two separate subjects joined by "and," making them a compound subject.</div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SOURCES
+══════════════════════════════════════ -->
+<section id="sources">
+  <span class="sec-tag">References</span>
+  <h2>Sources &amp; <em>Further Reading</em></h2>
+  <p>The ecotourism facts used in all sentences and exercises are drawn from the following peer-reviewed, governmental, and institutional sources:</p>
+
+  <div class="sources">
+    <h4>📚 Ecotourism & Biodiversity — Central America</h4>
+    <ol>
+      <li>
+        <strong>UNWTO (World Tourism Organization).</strong> <em>Ecotourism and Protected Areas.</em> United Nations, 2022.<br>
+        <a href="https://www.unwto.org/sustainable-development/ecotourism-and-protected-areas" target="_blank">https://www.unwto.org/sustainable-development/ecotourism-and-protected-areas</a>
+      </li>
+      <li>
+        <strong>Costa Rica Tourism Board (ICT).</strong> <em>National Parks and Biodiversity Statistics.</em> Instituto Costarricense de Turismo, 2023.<br>
+        <a href="https://www.visitcostarica.com/en/costa-rica/planning-your-trip/environment-and-wildlife" target="_blank">https://www.visitcostarica.com/en/costa-rica/planning-your-trip/environment-and-wildlife</a>
+      </li>
+      <li>
+        <strong>UNESCO World Heritage Centre.</strong> <em>Darién National Park — World Heritage List.</em> UNESCO, 2024.<br>
+        <a href="https://whc.unesco.org/en/list/159/" target="_blank">https://whc.unesco.org/en/list/159/</a>
+      </li>
+      <li>
+        <strong>Belize Tourism Board.</strong> <em>Belize Barrier Reef Reserve System.</em> Government of Belize, 2023.<br>
+        <a href="https://www.belizetourism.org/belize-destinations/belize-barrier-reef/" target="_blank">https://www.belizetourism.org/belize-destinations/belize-barrier-reef/</a>
+      </li>
+      <li>
+        <strong>WWF (World Wildlife Fund).</strong> <em>Mesoamerica Forests — A Global Biodiversity Hotspot.</em> WWF, 2023.<br>
+        <a href="https://www.worldwildlife.org/places/mesoamerica" target="_blank">https://www.worldwildlife.org/places/mesoamerica</a>
+      </li>
+      <li>
+        <strong>National Geographic Society.</strong> <em>Osa Peninsula: Earth's Most Biologically Intense Place.</em> National Geographic, 2021.<br>
+        <a href="https://www.nationalgeographic.com/travel/article/osa-peninsula-costa-rica" target="_blank">https://www.nationalgeographic.com/travel/article/osa-peninsula-costa-rica</a>
+      </li>
+      <li>
+        <strong>IUCN (International Union for Conservation of Nature).</strong> <em>Sea Turtle Conservation — Tortuguero, Costa Rica.</em> IUCN, 2022.<br>
+        <a href="https://www.iucn.org/resources/issues-brief/marine-turtles" target="_blank">https://www.iucn.org/resources/issues-brief/marine-turtles</a>
+      </li>
+      <li>
+        <strong>Monteverde Institute.</strong> <em>The Cloud Forest and Biodiversity of Monteverde.</em> Monteverde, Costa Rica, 2023.<br>
+        <a href="https://monteverde-institute.org/cloud-forest.html" target="_blank">https://monteverde-institute.org/cloud-forest.html</a>
+      </li>
+    </ol>
+    <br>
+    <h4>📚 Grammar References</h4>
+    <ol start="9">
+      <li>
+        <strong>Strunk, W. &amp; White, E. B.</strong> <em>The Elements of Style.</em> 4th ed. Longman, 1999.<br>
+        <span class="s-note">Foundational reference for English sentence structure and style.</span>
+      </li>
+      <li>
+        <strong>Kolln, M. &amp; Funk, R.</strong> <em>Understanding English Grammar.</em> 9th ed. Pearson, 2016.<br>
+        <span class="s-note">Source for sentence element terminology: SS, CS, SP, CP, DO, IO, OC, SC/PN, SC/PA.</span>
+      </li>
+      <li>
+        <strong>Greenbaum, S. &amp; Quirk, R.</strong> <em>A Student's Grammar of the English Language.</em> Longman, 1990.<br>
+        <span class="s-note">Authoritative reference for transitive and intransitive verb classification.</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+</div><!-- /wrap -->
+
+<footer>
+  <strong>Sentence Elements & Verb Types</strong> · Ecotourism in Central America<br>
+  An English Grammar Guide for intermediate and advanced learners.
+</footer>
+
+<script>
+// ── TRUE/FALSE DATA ──
+const tfData = [
+  {
+    q: 'In the sentence <em>"Costa Rica protects its forests,"</em> the verb "protects" is transitive because "forests" is its direct object.',
+    ans: true
+  },
+  {
+    q: 'A <strong>compound subject</strong> is formed when a sentence has two or more verbs sharing the same subject.',
+    ans: false
+  },
+  {
+    q: 'In <em>"Monteverde is a UNESCO Biosphere Reserve,"</em> "a UNESCO Biosphere Reserve" is a Subject Complement / Predicate Nominative (SC/PN).',
+    ans: true
+  },
+  {
+    q: 'In <em>"Tourists arrived at the Osa Peninsula,"</em> "arrived" is a transitive verb because it is followed by a prepositional phrase.',
+    ans: false
+  },
+  {
+    q: 'In <em>"The guide sent tourists information about the reserve,"</em> "tourists" is the indirect object of the sentence.',
+    ans: true
+  },
+  {
+    q: 'In <em>"The resplendent quetzal nests in highland cloud forests,"</em> the simple subject is "The resplendent quetzal."',
+    ans: false
+  },
+  {
+    q: 'The verb "disappeared" in <em>"The quetzal disappeared into the canopy"</em> is intransitive, because it has no direct object.',
+    ans: true
+  },
+  {
+    q: 'A <strong>predicate adjective</strong> (SC/PA) renames the subject, while a <strong>predicate nominative</strong> (SC/PN) describes it.',
+    ans: false
+  },
+  {
+    q: 'In <em>"Scientists named the reserve the symbol of biodiversity,"</em> "symbol of biodiversity" is an object complement (OC).',
+    ans: true
+  },
+  {
+    q: 'In <em>"Panama and Belize protect their coastal ecosystems,"</em> "Panama and Belize" form a compound subject.',
+    ans: true
+  }
+];
+
+// Build TF UI
+const tfContainer = document.getElementById('tf-container');
+tfData.forEach((item, i) => {
+  tfContainer.innerHTML += `
+    <div class="ex-item">
+      <div class="ex-num">${i+1}</div>
+      <div style="flex:1">
+        <div class="ex-sentence" style="font-size:15px">${item.q}</div>
+        <div class="tf-options">
+          <button class="tf-btn" id="tf${i}T" onclick="selectTF(${i},'T')">True</button>
+          <button class="tf-btn" id="tf${i}F" onclick="selectTF(${i},'F')">False</button>
+        </div>
+      </div>
+    </div>`;
+});
+
+const tfSelections = {};
+function selectTF(i, val) {
+  tfSelections[i] = val;
+  const tBtn = document.getElementById(`tf${i}T`);
+  const fBtn = document.getElementById(`tf${i}F`);
+  tBtn.className = 'tf-btn' + (val==='T' ? ' selected-t' : '');
+  fBtn.className = 'tf-btn' + (val==='F' ? ' selected-f' : '');
+}
+
+function checkTF() {
+  let score = 0;
+  tfData.forEach((item, i) => {
+    const sel = tfSelections[i];
+    const correct = item.ans ? 'T' : 'F';
+    const tBtn = document.getElementById(`tf${i}T`);
+    const fBtn = document.getElementById(`tf${i}F`);
+    tBtn.className = 'tf-btn';
+    fBtn.className = 'tf-btn';
+    if (correct === 'T') tBtn.classList.add('correct-ans');
+    else fBtn.classList.add('correct-ans');
+    if (sel && sel !== correct) {
+      if (sel === 'T') tBtn.classList.add('wrong-ans');
+      else fBtn.classList.add('wrong-ans');
+    }
+    if (sel === correct) score++;
+  });
+  showScore('scoreTF','scoreTFnum','scoreTFmsg','feedbackTF',score,10);
+}
+
+// ── Exercise A answers ──
+const aAnswers = {
+  a1: ['sp','simple predicate'],
+  a2: ['cps','compound subject','cpds'],
+  a3: ['io','indirect object'],
+  a4: ['sc/pn','pn','predicate nominative','subject complement'],
+  a5: ['sc/pa','pa','predicate adjective'],
+  a6: ['cpp','compound predicate'],
+  a7: ['oc','object complement'],
+  a8: ['cs','complete subject']
+};
+
+function normalize(s){ return s.toLowerCase().replace(/[^a-z/]/g,'').trim(); }
+
+function checkA() {
+  let score = 0;
+  const ids = ['a1','a2','a3','a4','a5','a6','a7','a8'];
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    const val = normalize(el.value);
+    const ok = aAnswers[id].some(ans => normalize(ans) === val || val.includes(normalize(ans)));
+    el.className = 'ex-input ' + (ok ? 'correct' : 'wrong');
+    if(ok) score++;
+  });
+  showScore('scoreA','scoreAnum','scoreAmsg','feedbackA',score,8);
+}
+
+// ── Exercise B answers ──
+const bAnswers = {
+  b1: ['i','intransitive'],
+  b2: ['t','transitive'],
+  b3: ['i','intransitive'],
+  b4: ['t','transitive'],
+  b5: ['i','intransitive'],
+  b6: ['t','transitive']
+};
+
+function checkB() {
+  let score = 0;
+  const ids = ['b1','b2','b3','b4','b5','b6'];
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    const val = normalize(el.value);
+    const ok = bAnswers[id].some(ans => val.startsWith(normalize(ans)));
+    el.className = 'ex-input ' + (ok ? 'correct' : 'wrong');
+    if(ok) score++;
+  });
+  showScore('scoreB','scoreBnum','scoreBmsg','feedbackB',score,6);
+}
+
+function showScore(barId, numId, msgId, fbId, score, total) {
+  document.getElementById(numId).textContent = score;
+  const pct = score/total;
+  let msg = pct===1 ? '🌟 Perfect score! Outstanding work!' :
+            pct>=0.75 ? '🌿 Great job! Review any missed items.' :
+            pct>=0.5  ? '🦜 Good effort — check the Answer Key below.' :
+                        '📖 Keep practising — the Answer Key will help!';
+  document.getElementById(msgId).textContent = msg;
+  const bar = document.getElementById(barId);
+  bar.classList.add('show');
+  const fb = document.getElementById(fbId);
+  fb.className = 'feedback show ' + (pct>=0.75 ? 'good' : 'bad');
+  fb.textContent = `You scored ${score} out of ${total}. ${pct<1?'Scroll to the Answer Key for full explanations.':'Excellent!'}`;
+}
+</script>
+</body>
+</html>
